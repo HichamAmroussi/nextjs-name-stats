@@ -50,14 +50,14 @@ export default async function page({ params }: Params) {
             } </td>
           </tr>
           <tr>
-            <td className="font-bold">Moyenne d'age</td>
+            <td className="font-bold">Moyenne d&apos;age</td>
             <td>{AgeObj.age} ans</td>
           </tr>
           <tr>
             <td className="font-bold">Pays</td>
             <td><ul className="flex gap-10">
               {nationalitiesObj?.country?.map((nationality: any) => (
-                <li className="flex flex-col items-center">
+                <li className="flex flex-col items-center" key={nationality.probability}>
                   <img src={`https://flagsapi.com/${nationality.country_id}/shiny/64.png`} />
                   <p>{regionNames.of(nationality.country_id)}</p>
                   <p>{Math.trunc(nationality.probability * 100) + "%"}</p>
